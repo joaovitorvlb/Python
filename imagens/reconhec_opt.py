@@ -5,14 +5,14 @@ from SimpleCV import *
 import time
  
  
-img = Image("ret.png")
+img = Image('ret.png')
  
 blobs = img.findBlobs()
-print "Objetos Encontrados --> %i\n" % (len(blobs))
+print ("Objetos Encontrados --> %i\n"  (len(blobs)))
 if blobs:
     blobs = blobs[-1]
-    print "Angulo do Objeto --> %i\n" % (blobs.angle())
-    print "Aplicando rotação para desinclinação da imagem!"
+    print ("Angulo do Objeto --> %i\n" (blobs.angle()))
+#    print ("Aplicando rotação para desinclinação da imagem!")
     img = img.smartRotate()    
     bin = img.binarize()
     text = bin.readText()[:-5]
